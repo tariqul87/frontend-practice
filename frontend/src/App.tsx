@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Test from "./pages/Test";
+import ChatHistory from "./pages/ChatHistory";
 
 function App() {
   useEffect(() => {
@@ -15,7 +17,8 @@ function App() {
           alongside the router so it wraps all routes. */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/test" element={<div className="p-4">Test route</div>} />
+        <Route path="/test" element={<Test />} />
+        <Route path="/chat-history" element={<ChatHistory />} />
       </Routes>
     </BrowserRouter>
   );
