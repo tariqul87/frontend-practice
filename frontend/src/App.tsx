@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Test from "./pages/Test";
 import ChatHistory from "./pages/ChatHistory";
+import MineField from "./pages/MineField";
+import StudentTable from "./pages/StudentTable/StudentTable";
 
 function App() {
   useEffect(() => {
@@ -18,7 +20,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/test" element={<Test />} />
+        <Route path="/minefield" element={<MineField />} />
         <Route path="/chat-history" element={<ChatHistory />} />
+        <Route path="/student-table" element={<StudentTable />} />
       </Routes>
     </BrowserRouter>
   );
