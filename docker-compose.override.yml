@@ -1,0 +1,19 @@
+# Dev: adds frontend-dev with Vite and hot reload. Use http://localhost:5173
+# (Leave frontend as-is so production build still available on :3000 if needed.)
+
+services:
+  frontend-dev:
+    image: node:22-alpine
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_PROXY_TARGET=http://backend:3001
+      - VITE_API_URL=
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    depends_on:
+      - backend
+    networks:
+      - fullstack-network
