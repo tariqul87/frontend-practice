@@ -117,16 +117,14 @@ const StudentTable = () => {
         return true;
       })
       .sort((a, b) =>
-        gradeSortOrder === "asc" ? a.grade - b.grade : b.grade - a.grade
+        gradeSortOrder === "asc" ? a.grade - b.grade : b.grade - a.grade,
       );
   }, [data, searchText, selectedClass, gradeSortOrder]);
 
   const summary = useMemo(() => {
     const count = tableData.length;
     const avgGrade =
-      count > 0
-        ? tableData.reduce((sum, s) => sum + s.grade, 0) / count
-        : 0;
+      count > 0 ? tableData.reduce((sum, s) => sum + s.grade, 0) / count : 0;
     return { count, avgGrade: avgGrade.toFixed(2) };
   }, [tableData]);
 
@@ -187,7 +185,7 @@ const StudentTable = () => {
                     className="w-full text-left cursor-pointer hover:bg-gray-500 py-1 px-1 -mx-1 rounded"
                     onClick={() =>
                       setGradeSortOrder((prev) =>
-                        prev === "asc" ? "desc" : "asc"
+                        prev === "asc" ? "desc" : "asc",
                       )
                     }
                   >
